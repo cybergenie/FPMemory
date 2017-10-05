@@ -12,17 +12,17 @@ import android.view.ViewGroup;
 public class fgPagerAdapter extends FragmentPagerAdapter{
 
     private final int PAGER_COUNT = 4;
-    private Fragment_Protection fgProtection = null;
-    private Fragment_Training fgTraining = null;
-    private Fragment_Recover fgRecover = null;
-    private Fragment_Emergency fgEmergency = null;
+    private Fragment_Sports fgSports = null;
+    private Fragment_Health fgHealth = null;
+    private Fragment_Find fgFind = null;
+    private Fragment_Me fgMe = null;
 
     public fgPagerAdapter (FragmentManager fm){
         super(fm);
-        fgProtection = new Fragment_Protection();
-        fgTraining = new Fragment_Training();
-        fgRecover = new Fragment_Recover();
-        fgEmergency = new Fragment_Emergency();
+        fgSports = new Fragment_Sports();
+        fgHealth = new Fragment_Health();
+        fgFind = new Fragment_Find();
+        fgMe = new Fragment_Me();
     }
 
     @Override
@@ -41,16 +41,16 @@ public class fgPagerAdapter extends FragmentPagerAdapter{
         Fragment fragment = null;
         switch (position) {
             case MainActivity.PAGE_ONE:
-                fragment = fgProtection;
+                fragment = fgSports;
                 break;
             case MainActivity.PAGE_TWO:
-                fragment = fgTraining;
+                fragment = fgHealth;
                 break;
             case MainActivity.PAGE_THREE:
-                fragment = fgRecover;
+                fragment = fgFind;
                 break;
             case MainActivity.PAGE_FOUR:
-                fragment = fgEmergency;
+                fragment = fgMe;
                 break;
         }
         return fragment;
@@ -61,3 +61,5 @@ public class fgPagerAdapter extends FragmentPagerAdapter{
         return PAGER_COUNT;
     }
 }
+
+

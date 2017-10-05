@@ -2,18 +2,16 @@ package com.example.android.fpmemory;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 /**
  * Created by Jay on 2015/8/28 0028.
  */
-public class Fragment_Protection extends Fragment {
+public class Fragment_Sports extends Fragment {
 
-    public Fragment_Protection() {
+    public Fragment_Sports() {
     }
 
     @Override

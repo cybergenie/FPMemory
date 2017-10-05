@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     //UI Objects
     private TextView txt_topbar;
     private RadioGroup rg_tab_bar;
-    private RadioButton rb_protection;
-    private RadioButton rb_training;
-    private RadioButton rb_recover;
-    private RadioButton rb_emergency;
+    private RadioButton rb_sports;
+    private RadioButton rb_health;
+    private RadioButton rb_find;
+    private RadioButton rb_me;
     private ViewPager vpager;
 
     private fgPagerAdapter mAdapter;
@@ -43,16 +43,17 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         setContentView(R.layout.activity_main);
         mAdapter = new fgPagerAdapter(getSupportFragmentManager());
         bindViews();
-        rb_protection.setChecked(true);
+        initView();
+        rb_sports.setChecked(true);
     }
 
     private void bindViews() {
         txt_topbar = (TextView) findViewById(R.id.txt_topbar);
         rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
-        rb_protection = (RadioButton) findViewById(R.id.rb_protection);
-        rb_training = (RadioButton) findViewById(R.id.rb_training);
-        rb_recover = (RadioButton) findViewById(R.id.rb_recover);
-        rb_emergency = (RadioButton) findViewById(R.id.rb_emergency);
+        rb_sports = (RadioButton) findViewById(R.id.rb_sports);
+        rb_health = (RadioButton) findViewById(R.id.rb_health);
+        rb_find = (RadioButton) findViewById(R.id.rb_find);
+        rb_me = (RadioButton) findViewById(R.id.rb_me);
         rg_tab_bar.setOnCheckedChangeListener(this);
 
 
@@ -62,22 +63,47 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         vpager.addOnPageChangeListener(this);
     }
 
-    @Override
+    private void initView() {
+
+        int imagesize = 35;
+//        定义rb_sports标签图片大小和位置
+        Drawable drawable_sports = getResources().getDrawable(R.drawable.tab_menu_sports, getTheme());
+        drawable_sports.setBounds(0, 0, DensityUtil.dip2px(this,imagesize), DensityUtil.dip2px(this,imagesize));
+        rb_sports.setCompoundDrawables(null, drawable_sports, null, null);
+
+//        定义rb_sports标签图片大小和位置
+        Drawable drawable_health = getResources().getDrawable(R.drawable.tab_menu_health, getTheme());
+        drawable_health.setBounds(0, 0, DensityUtil.dip2px(this,imagesize), DensityUtil.dip2px(this,imagesize));
+        rb_health.setCompoundDrawables(null, drawable_health, null, null);
+
+//        定义rb_sports标签图片大小和位置
+        Drawable drawable_find = getResources().getDrawable(R.drawable.tab_menu_find, getTheme());
+        drawable_find.setBounds(0, 0, DensityUtil.dip2px(this,imagesize), DensityUtil.dip2px(this,imagesize));
+        rb_find.setCompoundDrawables(null, drawable_find, null, null);
+
+//        定义rb_sports标签图片大小和位置
+        Drawable drawable_me = getResources().getDrawable(R.drawable.tab_menu_me, getTheme());
+        drawable_me.setBounds(0, 0, DensityUtil.dip2px(this,imagesize), DensityUtil.dip2px(this,imagesize));
+        rb_me.setCompoundDrawables(null, drawable_me, null, null);
+    }
+
+
+        @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
-            case R.id.rb_protection:
+            case R.id.rb_sports:
                 vpager.setCurrentItem(PAGE_ONE);
                 txt_topbar.setText("安全防护");
                 break;
-            case R.id.rb_training:
+            case R.id.rb_health:
                 vpager.setCurrentItem(PAGE_TWO);
                 txt_topbar.setText("健康教育");
                 break;
-            case R.id.rb_recover:
+            case R.id.rb_find:
                 vpager.setCurrentItem(PAGE_THREE);
                 txt_topbar.setText("康复管理");
                 break;
-            case R.id.rb_emergency:
+            case R.id.rb_me:
                 vpager.setCurrentItem(PAGE_FOUR);
                 txt_topbar.setText("紧急救护");
                 break;
@@ -100,16 +126,16 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         if (state == 2) {
             switch (vpager.getCurrentItem()) {
                 case PAGE_ONE:
-                    rb_protection.setChecked(true);
+                    rb_sports.setChecked(true);
                     break;
                 case PAGE_TWO:
-                    rb_training.setChecked(true);
+                    rb_health.setChecked(true);
                     break;
                 case PAGE_THREE:
-                    rb_recover.setChecked(true);
+                    rb_find.setChecked(true);
                     break;
                 case PAGE_FOUR:
-                    rb_emergency.setChecked(true);
+                    rb_me.setChecked(true);
                     break;
             }
         }

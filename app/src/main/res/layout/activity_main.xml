@@ -32,34 +32,34 @@
     <RadioGroup
         android:id="@+id/rg_tab_bar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="65dp"
         android:layout_alignParentBottom="true"
         android:background="@color/bg_white"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/rb_protection"
+            android:id="@+id/rb_sports"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_protection"
-            android:text="@string/tab_menu_protection" />
+            android:drawableTop="@drawable/tab_menu_sports"
+            android:text="@string/tab_menu_sports" />
 
         <RadioButton
-            android:id="@+id/rb_training"
+            android:id="@+id/rb_health"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_training"
-            android:text="@string/tab_menu_training" />
+            android:drawableTop="@drawable/tab_menu_health"
+            android:text="@string/tab_menu_health" />
 
         <RadioButton
-            android:id="@+id/rb_recover"
+            android:id="@+id/rb_find"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_recover"
-            android:text="@string/tab_menu_recover" />
+            android:drawableTop="@drawable/tab_menu_find"
+            android:text="@string/tab_menu_find" />
 
         <RadioButton
-            android:id="@+id/rb_emergency"
+            android:id="@+id/rb_me"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_emergency"
-            android:text="@string/tab_menu_emergency" />
+            android:drawableTop="@drawable/tab_menu_me"
+            android:text="@string/tab_menu_me" />
 
     </RadioGroup>
 
@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:layout_above="@id/rg_tab_bar"
-        android:background="@color/div_white" />
+        android:background="@color/div_gray" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vpager"

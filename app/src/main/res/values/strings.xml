@@ -8,10 +8,10 @@
     <string name="btn_pressure">血压管理</string>
     <string name="btn_sports">运动管理</string>
 
-    <string name="tab_menu_protection">安全防护</string>
-    <string name="tab_menu_training">健康教育</string>
-    <string name="tab_menu_recover">康复管理</string>
-    <string name="tab_menu_emergency">紧急救护</string>
+    <string name="tab_menu_sports">运动</string>
+    <string name="tab_menu_health">健康</string>
+    <string name="tab_menu_find">发现</string>
+    <string name="tab_menu_me">我的</string>
     <string name="title_activity_weight_content">体重管理</string>
 
     <string name="tv_rate_average">平均</string>

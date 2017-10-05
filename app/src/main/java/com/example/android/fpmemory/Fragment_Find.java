@@ -3,19 +3,17 @@ package com.example.android.fpmemory;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 /**
  * Created by Jay on 2015/8/28 0028.
  */
-public class Fragment_Recover extends Fragment implements View.OnClickListener{
+public class Fragment_Find extends Fragment implements View.OnClickListener{
 
-    public Fragment_Recover() {
+    public Fragment_Find() {
     }
 
     @Override
