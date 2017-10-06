@@ -141,7 +141,8 @@
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:background="@color/transparent"
-                android:src="@mipmap/arrow_right" />
+                android:clickable="true"
+                android:src="@drawable/arrow_right_click" />
         </LinearLayout>
 
         <View
@@ -173,14 +174,16 @@
                 android:textColor="@color/text_black"
                 android:textSize="28sp"
                 android:text="@string/item_sports_finished"/>
+
             <ImageView
                 android:id="@+id/arrow_finished"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:background="@color/transparent"
-                android:src="@mipmap/arrow_right"/>
+                android:clickable="true"
+                android:src="@drawable/arrow_right_click" />
         </LinearLayout>
 
         <View
@@ -212,14 +215,16 @@
                 android:textColor="@color/text_black"
                 android:textSize="28sp"
                 android:text="@string/item_sports_nonfinished"/>
+
             <ImageView
                 android:id="@+id/arrow_nonfinished"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:background="@color/transparent"
-                android:src="@mipmap/arrow_right"/>
+                android:clickable="true"
+                android:src="@drawable/arrow_right_click" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"

@@ -17,10 +17,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".rate_content"
+            android:name=".sports_history_content"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
-            android:name=".sports_content"
+            android:name=".sports_finished_content"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
+            android:name=".sports_nonfinished_content"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
