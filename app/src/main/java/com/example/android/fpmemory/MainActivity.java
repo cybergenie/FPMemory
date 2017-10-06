@@ -1,17 +1,12 @@
 package com.example.android.fpmemory;
 
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
@@ -25,6 +20,7 @@ import android.support.v4.app.FragmentTransaction;
 public class MainActivity extends FragmentActivity implements RadioGroup.OnCheckedChangeListener{
 
     private TextView txt_topbar;
+    private LinearLayout ly_top_bar;
     private RadioGroup rg_tab_bar;
     private RadioButton rb_sports;
     private RadioButton rb_health;
@@ -49,46 +45,42 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bindViews();
-        initView();
         rb_sports.setChecked(true);
     }
 
     private void bindViews() {
         txt_topbar = (TextView) findViewById(R.id.txt_topbar);
+        ly_top_bar = (LinearLayout)findViewById(R.id.ly_top_bar);
         rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
         rb_sports = (RadioButton) findViewById(R.id.rb_sports);
         rb_health = (RadioButton) findViewById(R.id.rb_health);
         rb_find = (RadioButton) findViewById(R.id.rb_find);
         rb_me = (RadioButton) findViewById(R.id.rb_me);
         rg_tab_bar.setOnCheckedChangeListener(this);
-    }
-    private void initView() {
 
 //        定义图片大小，单位是dx
         int imagesize = 35;
 //        定义rb_sports标签图片大小和位置
-        Drawable drawable_sports = getResources().getDrawable(R.drawable.tab_menu_sports, getTheme());
+        Drawable drawable_sports = getResources().getDrawable(R.drawable.tab_menu_sports, null);
         drawable_sports.setBounds(0, 0, DensityUtil.dip2px(this,imagesize), DensityUtil.dip2px(this,imagesize));
         rb_sports.setCompoundDrawables(null, drawable_sports, null, null);
 
 //        定义rb_sports标签图片大小和位置
-        Drawable drawable_health = getResources().getDrawable(R.drawable.tab_menu_health, getTheme());
+        Drawable drawable_health = getResources().getDrawable(R.drawable.tab_menu_health, null);
         drawable_health.setBounds(0, 0, DensityUtil.dip2px(this,imagesize), DensityUtil.dip2px(this,imagesize));
         rb_health.setCompoundDrawables(null, drawable_health, null, null);
 
 //        定义rb_sports标签图片大小和位置
-        Drawable drawable_find = getResources().getDrawable(R.drawable.tab_menu_find, getTheme());
+        Drawable drawable_find = getResources().getDrawable(R.drawable.tab_menu_find, null);
         drawable_find.setBounds(0, 0, DensityUtil.dip2px(this,imagesize), DensityUtil.dip2px(this,imagesize));
         rb_find.setCompoundDrawables(null, drawable_find, null, null);
 
 //        定义rb_sports标签图片大小和位置
-        Drawable drawable_me = getResources().getDrawable(R.drawable.tab_menu_me, getTheme());
+        Drawable drawable_me = getResources().getDrawable(R.drawable.tab_menu_me, null);
         drawable_me.setBounds(0, 0, DensityUtil.dip2px(this,imagesize), DensityUtil.dip2px(this,imagesize));
         rb_me.setCompoundDrawables(null, drawable_me, null, null);
+
     }
-
-
-
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -104,7 +96,8 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
                 else {
                     ft.show(fgSports);
                 }
-                txt_topbar.setText("安全防护");
+                txt_topbar.setText(this.getResources().getString(R.string.tab_menu_sports));
+                ly_top_bar.setBackgroundColor(this.getResources().getColor(R.color.bg_menu_sports,null));
                 break;
             case R.id.rb_health:
                 if(fgHealth==null){
@@ -114,7 +107,8 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
                 else {
                     ft.show(fgHealth);
                 }
-                txt_topbar.setText("健康教育");
+                txt_topbar.setText(this.getResources().getString(R.string.tab_menu_health));
+                ly_top_bar.setBackgroundColor(this.getResources().getColor(R.color.bg_menu_health,null));
                 break;
             case R.id.rb_find:
                 if(fgFind==null){
@@ -124,7 +118,8 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
                 else {
                     ft.show(fgFind);
                 }
-                txt_topbar.setText("康复管理");
+                txt_topbar.setText(this.getResources().getString(R.string.tab_menu_find));
+                ly_top_bar.setBackgroundColor(this.getResources().getColor(R.color.bg_menu_find,null));
                 break;
             case R.id.rb_me:
                 if(fgMe==null){
@@ -134,7 +129,8 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
                 else {
                     ft.show(fgMe);
                 }
-                txt_topbar.setText("紧急救护");
+                txt_topbar.setText(this.getResources().getString(R.string.tab_menu_me));
+                ly_top_bar.setBackgroundColor(this.getResources().getColor(R.color.bg_menu_me,null));
                 break;
         }
         ft.commit();

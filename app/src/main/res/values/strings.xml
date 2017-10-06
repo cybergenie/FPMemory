@@ -14,6 +14,10 @@
     <string name="tab_menu_me">我的</string>
     <string name="title_activity_weight_content">体重管理</string>
 
+    <string name="tab_health_heartrate">心率</string>
+    <string name="tab_health_bloodpressure">血压</string>
+    <string name="tab_health_bloodoxygen">血氧</string>
+
     <string name="tv_rate_average">平均</string>
     <string name="tv_rate_max">最高</string>
     <string name="tv_rate_min">最低</string>

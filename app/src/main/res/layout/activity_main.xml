@@ -4,37 +4,53 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/ly_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
         android:background="@color/bg_topbar">
+
+        <ImageButton
+            style="@style/tab_menu_top"
+            android:layout_width="50dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tab_menu_gps" />
 
         <TextView
             android:id="@+id/txt_topbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center"
             android:text="足际"
             android:textColor="@color/text_topbar"
             android:textSize="25sp" />
 
-        <FrameLayout
-            android:id="@+id/fragment_content"
-            android:layout_width="match_parent"
+        <ImageButton
+            style="@style/tab_menu_top"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_below="@+id/txt_topbar"
-            >
-        </FrameLayout>
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tab_menu_alarm" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_alignParentBottom="true"
-            android:background="@color/div_white" />
+    </LinearLayout>
 
-    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/div_tab_bar"
+        android:layout_below="@+id/ly_top_bar"
+        >
+    </FrameLayout>
 
 
     <RadioGroup
@@ -78,12 +94,12 @@
         android:layout_above="@id/rg_tab_bar"
         android:background="@color/div_gray" />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/div_tab_bar"
-        android:layout_below="@id/ly_top_bar" />
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/vpager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_above="@id/div_tab_bar"-->
+        <!--android:layout_below="@id/ly_top_bar" />-->
 
 
 </RelativeLayout>

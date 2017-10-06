@@ -2,8 +2,14 @@
 <resources>
     <color name="bg_black">#000000</color>
     <color name="bg_white">#FFFFFF</color>
-    <color name="bg_topbar">#f08183</color>
+    <color name="bg_topbar">#71c7d5</color>
     <color name="bg_gray">#00F1F1F1</color>
+
+    <color name="bg_menu_sports">#71c7d5</color>
+    <color name="bg_menu_health">#71c7d5</color>
+    <color name="bg_menu_find">#71c7d5</color>
+    <color name="bg_menu_me">#71c7d5</color>
+
     <color name="transparent">#00FFFFFF</color>
 
     <color name="text_gray">#8a8a8a</color>
