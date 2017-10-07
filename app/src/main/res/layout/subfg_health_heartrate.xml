@@ -11,6 +11,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/heartrate_circle"
         android:layout_width="match_parent"
         android:layout_height="240dp">
         <ImageButton
@@ -62,23 +63,11 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/recycleview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/heartrate_history"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:scrollbars="vertical" />
-    </LinearLayout>
-    <LinearLayout
+        android:id="@+id/recycleview_head"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center_vertical"
-        android:layout_above="@id/recycleview">
+        android:layout_below="@id/heartrate_circle">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -91,5 +80,21 @@
             android:textSize="20sp"
             android:text="历史纪录"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recycleview"
+        android:layout_below="@id/recycleview_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/heartrate_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
 
 </RelativeLayout>
