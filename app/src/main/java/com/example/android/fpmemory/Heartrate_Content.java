@@ -2,59 +2,48 @@ package com.example.android.fpmemory;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
-import com.example.android.fpmemory.PullDoorView;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Heartrate_Content extends Fragment {
-    private Button mBut;
-    private PullDoorView mView;
+
+    private ImageView heartImage;
+
+    private List<SportsResultHistory> sportsResultHistories = new ArrayList<>();
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
+
         View view = inflater.inflate(R.layout.subfg_health_heartrate, null);
-        mBut = (Button) this.getActivity().findViewById(R.id.but);
-        mView = (PullDoorView) this.getActivity().findViewById(R.id.myImage);
-        mBut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mView.showImgAnimation();
-            }
-        });
+        heartImage = (ImageView)view.findViewById(R.id.heart);
+        Animation heartrateOnMeasure = AnimationUtils.loadAnimation(this.getActivity().getApplicationContext(),R.anim.heartrate_measure);
+        heartImage.startAnimation(heartrateOnMeasure);
+        initSportsResultHistory();
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.heartrate_history);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity().getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        SportsHistoryAdapter sportsHistoryAdapter = new SportsHistoryAdapter(sportsResultHistories);
+        recyclerView.setAdapter(sportsHistoryAdapter);
         return view;
     }
+
+    private void initSportsResultHistory(){
+        sportsResultHistories.clear();
+       SportsResultHistory sport1 = new SportsResultHistory(R.mipmap.runner,"运动后","2017/10/07 16:37","103");
+       SportsResultHistory sport2 = new SportsResultHistory(R.mipmap.runner,"运动后","2017/10/05 16:37","106");
+        sportsResultHistories.add(sport1);
+        sportsResultHistories.add(sport2);
+    }
 }
-
-//package com.test.animation;
-//
-//        import android.os.Bundle;
-//        import android.support.v7.app.AppCompatActivity;
-//        import android.view.View;
-//        import android.widget.Button;
-//
-//        import com.test.animation.view.PullDoorView;
-//
-//public class MainActivity extends AppCompatActivity {
-//    private Button mBut;
-//    private PullDoorView mView;
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        mBut = (Button) findViewById(R.id.but);
-//        mView = (PullDoorView) findViewById(R.id.myImage);
-//        mBut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mView.showImgAnimation();
-//            }
-//        });
-//
-//    }
-//}
-

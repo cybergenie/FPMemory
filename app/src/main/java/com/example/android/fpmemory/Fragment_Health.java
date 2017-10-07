@@ -81,13 +81,13 @@ public class Fragment_Health extends Fragment implements RadioGroup.OnCheckedCha
 
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
-            case R.id.rb_sports:
+            case R.id.rb_heartrate:
                 mPager.setCurrentItem(0);
                 break;
-            case R.id.rb_health:
+            case R.id.rb_bloodpressure:
                 mPager.setCurrentItem(1);
                 break;
-            case R.id.rb_find:
+            case R.id.rb_bloodoxygen:
                 mPager.setCurrentItem(2);
                 break;
         }
