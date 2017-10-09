@@ -12,14 +12,14 @@
 
         <TextView
             style="@style/item_name_sports"
-            android:text="@string/item_sports_pace"
+            android:text="@string/item_sports_period"
             android:layout_weight="1"/>
         <TextView
             style="@style/item_name_sports"
-            android:text="@string/item_sports_stride"/>
+            android:text="@string/item_sports_item"/>
         <TextView
             style="@style/item_name_sports"
-            android:text="@string/item_sports_gait"/>
+            android:text="@string/item_sports_time"/>
     </LinearLayout>
 
     <LinearLayout
@@ -31,13 +31,12 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1">
+
             <TextView
-                android:id="@+id/value_sports_pace"
+                android:id="@+id/value_sports_period"
                 style="@style/item_value_sports"
-                android:text="0.2"/>
-            <TextView
-                style="@style/item_unit_sports"
-                android:text="m/s"/>
+                android:gravity="center"
+                android:text="IV" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,10 +46,8 @@
             <TextView
                 android:id="@+id/value_sports_stride"
                 style="@style/item_value_sports"
-                android:text="60"/>
-            <TextView
-                style="@style/item_unit_sports"
-                android:text="cm"/>
+                android:gravity="center"
+                android:text="蹲起"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,10 +58,11 @@
             <TextView
                 android:id="@+id/value_sports_gait"
                 style="@style/item_value_sports"
-                android:text="80"/>
+                android:text="60" />
+
             <TextView
                 style="@style/item_unit_sports"
-                android:text="分"/>
+                android:text="分钟" />
         </LinearLayout>
 
 
